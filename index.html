@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>2 Intelligent Agents</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+        .floor:hover { cursor: pointer; }
+        .agent-actions { margin-left: auto; margin-right: auto; border-collapse: collapse; }
+        .agent-actions th { padding: 0.5ex; border: 1px solid hsl(240,10%,90%); background: hsl(240,10%,85%); text-align: center; }
+        .agent-actions td { padding: 0.25ex; border: 1px solid hsl(240,20%,80%); text-align: center; }
+
+        .robot { transition: transform 2.0s; }
+        .floor { fill: white; }
+        .floor.clean { fill: hsl(240,10%,90%); transition: fill 2.0s; }
+        .floor.dirty { fill: hsl(0,50%,50%); transition: fill 0.1s; }
+        .floor.dirty2 { fill: rgb(216, 236, 36); transition: fill 0.1s; }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-offset-3" id="content">
+
+        <h2 id="simple-cleaning-robot">Simple cleaning robot</h2>
+
+        <div id="agent-controlled-diagram">
+
+          <p>
+            The robot will choose its own actions based on simple rules. Click on a box to make it dirty.
+
+            <h3>Modificações:</h3>
+            Movimentos UP e DOWN adicionados.<br>Mais um tipo de sujeira tambem foi adicionado.<br>
+            OBS: Enquanto o robot não encontrar uma sujeira seus movimentos sempre serão em sentido horário.<br><br>
+            Random 1: Ao clicar em um floor o tipo de sujeira será aleátorio(Dirty e Dirty2)<br>
+            Random 2: Ao ser selecionado a Dirty2 aleatoriamante há uma chance de sujar outro floor aleátorio tambem com a Dirty2(OBS: Somente se o floor estiver limpo).<br><br>
+            Sujeira padrão: cor vermelha<br>
+            Sujeira adicionada: cor amarelo.
+          </p>
+
+          <svg width="750" height="900"></svg>
+
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./cleaningRobot.js"></script>
+    <script type="text/javascript" src="./c_cleaningRobot.js"></script>
+  </body>
+</html>
